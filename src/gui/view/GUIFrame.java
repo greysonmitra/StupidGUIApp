@@ -6,7 +6,7 @@ import gui.controller.GUIController;
 /**
  * 
  * @author gmit3891
- *@version 0.x Nov 9, 2015
+ *@version 0.1 Nov 9, 2015
  */
 public class GUIFrame extends JFrame
 {
@@ -21,6 +21,7 @@ public class GUIFrame extends JFrame
 	private void setupFrame()
 	{
 		this.setSize(400,400);
+		this.setResizable(false);
 		this.setVisible(true);
 	}
 }
