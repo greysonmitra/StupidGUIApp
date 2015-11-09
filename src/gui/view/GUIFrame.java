@@ -15,6 +15,7 @@ public class GUIFrame extends JFrame
 	public GUIFrame(GUIController baseController)
 	{
 		this.baseController = baseController;
+		setupFrame();
 	}
 	
 	private void setupFrame()
