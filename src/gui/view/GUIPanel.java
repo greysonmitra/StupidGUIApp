@@ -28,7 +28,7 @@ public class GUIPanel extends JPanel
 		
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("Please do not click the button");
-		firstField = new JTextField("words can be typed here");
+		firstField = new JTextField("words can be retyped here");
 	
 		setupPanel();
 		setupLayout();
