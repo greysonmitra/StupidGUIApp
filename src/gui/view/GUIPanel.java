@@ -4,12 +4,15 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout; //For layout
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 import gui.controller.GUIController;
 
 /**
  * 
  * @author gmit3891
- *@version 0.1 Nov 9,2015
+ *@version 0.2 Nov 9,2015 updated and added a button click event.
  *
  */
 public class GUIPanel extends JPanel
@@ -38,10 +41,15 @@ public class GUIPanel extends JPanel
 	private void setupPanel()
 	{
 		this.setLayout(baseLayout);
+		this.setBackground(Color.BLUE);
 		this.add(firstButton);
 		this.add(firstField);
 	}
 	
+	/**
+	 * Helper method for arranging the panel.
+	 * Dumping ground for WindowBuilder generated code.
+	 */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.EAST, firstButton, -102, SpringLayout.EAST, this);
@@ -53,6 +61,17 @@ public class GUIPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		firstButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				firstField.setText("Wow, you managed a click event! Wow!!!!!!!!");
+			}
+		});
 	}
+	
+//	if(click = true)
+//	{
+//		this.setVisible(false);
+	//}
 }
