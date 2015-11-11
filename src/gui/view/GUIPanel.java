@@ -27,7 +27,7 @@ public class GUIPanel extends JPanel
 		this.baseController = baseController;
 		
 		baseLayout = new SpringLayout();
-		firstButton = new JButton("Please do not click the button");
+		firstButton = new JButton("Please remember the bin\\ before the button");
 		firstField = new JTextField("words can be typed here");
 	
 		setupPanel();
