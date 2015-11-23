@@ -1,11 +1,7 @@
 package gui.view;
 
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout; //For layout
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.*; //For layout
+import java.awt.event.*;
 import java.awt.Color;
 import gui.controller.GUIController;
 
@@ -59,6 +55,16 @@ public class GUIPanel extends JPanel
 		
 	}
 	
+	private void changeRandomColor()
+	{
+		int red, green, blue;
+		red = (int) (Math.random() * 256);
+		green = (int) (Math.random() * 256);
+		blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
+	}
+	
 	private void setupListeners()
 	{
 		firstButton.addActionListener(new ActionListener()
@@ -66,6 +72,56 @@ public class GUIPanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				firstField.setText("Wow, you managed a click event! Wow!!!!!!!!");
+			}
+		});
+		
+		this.addMouseListener(new MouseListener()
+		{
+			public void mouseClicked(MouseEvent click)
+			{
+				changeRandomColor();
+			}
+			
+			public void mouseReleased(MouseEvent released)
+			{
+				changeRandomColor();
+			}
+			
+			public void mousePressed(MouseEvent pressed)
+			{
+				changeRandomColor();
+			}
+			
+			public void mouseEntered(MouseEvent entered)
+			{
+				changeRandomColor();
+			}
+			
+			public void mouseExited(MouseEvent exited)
+			{
+				changeRandomColor();
+			}
+			
+		});
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+			public void mouseMoved(MouseEvent moved)
+			{
+				if(moved.isAltDown())
+				{
+					changeRandomColor();
+				}
+				firstField.setText("Mouse X: " + moved.getX() + " Mouse Y:"+ moved.getY() );
+				if((Math.abs(moved.getX() - firstButton.getX()) < 140) && (Math.abs(moved.getY() - firstButton.getY()) < 140))
+				{
+					firstButton.setLocation((int) (Math.random() * 300), (int) (Math.random() * 300));
+				}
+			}
+			
+			public void mouseDragged(MouseEvent dragged)
+			{
+				
 			}
 		});
 	}
