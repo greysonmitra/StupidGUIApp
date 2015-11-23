@@ -29,7 +29,7 @@ public class GUIFrame extends JFrame
 		this.setVisible(true);		    //Must be last line of setupFrame! So that is sets up the frame then displays it duh.
 	} 
 	
-	public GUIController getbaseController()
+	public GUIController getBaseController()
 	{
 		return baseController;
 	}
